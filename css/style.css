@@ -133,4 +133,25 @@ main {
     /* border: blue 2px solid; */
 
     float: left;
+}
+ 
+.message-box {
+    display: flex;
+}
+
+.message-box .message {
+    padding: 5px;
+    margin: 7px;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 150px;
+    font-size: 13px;
+}
+.message-box.sent {
+    justify-content: flex-end;
+}
+.message-box.sent .message {
+    background-color: #25D366;
+}
+
 /* --- / MAIN --- */

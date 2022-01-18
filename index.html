@@ -64,6 +64,8 @@
 
             <!--   layout sinistra -->
             <main>
+
+                <!--   utente attivo -->
                 <header>
                     <div class="user-box">
                         <img :src="'img/avatar' + contacts[activeUserId].avatar + '.jpg'" alt="contacts[activeUserId].name">
@@ -71,10 +73,33 @@
                     </div>
                     <div class="button-box">
                         <i class="fas fa-search"></i>
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
                 </header>
+                <!-- / utente attivo -->
+
+                <!--   chat -->
+                <div class="chat-container">
+                    <div class="chat-box">
+
+                        <div 
+                        class="message-box"
+                        :class="{sent : message.status === 'sent'}"
+                        v-for='message in this.contacts[activeUserId].messages'
+                        >
+                            <div class="message" >
+                                <div class="text"> {{message.text}} </div>
+                                <div class="date"> {{message.date}}</div>
+                                <div> {{ message.status }}</div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="write-box"></div>
+                </div>
+                <!-- / chat -->
+
             </main>
             <!-- / layout sinistra -->
 

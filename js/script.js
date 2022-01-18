@@ -92,8 +92,6 @@ new Vue({
     },
     methods: {
         activeUser: function(index) {
-
-            console.log(index)
             this.activeUserId= index
         },
 
