@@ -87,9 +87,16 @@ new Vue({
                 ],
             },
         ],
+        activeUserId: 0,
         
     },
     methods: {
+        activeUser: function(index) {
+
+            console.log(index)
+            this.activeUserId= index
+        },
+
 
     }, 
 })

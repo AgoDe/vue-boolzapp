@@ -16,8 +16,13 @@
 }
 
 /* puntatore */
-.contact-box {
+.contact-box,
+.fas {
     cursor: pointer;
+}
+
+.fas:hover {
+    color: #666;
 }
 /* / CLASSI UTILITY */
 
@@ -28,12 +33,12 @@
 }
 
 .up-layout {
-    height: 120px;
+    height: 17vh;
     background-color: #128C7E;
 }
 .down-layout {
     background-color: #ece5dd;
-    height: calc(100vh - 120px);
+    height: 83vh;
 }
 /* / background layout */
 
@@ -49,7 +54,10 @@
 }
 header {
     height: 55px;
-    border: red 2px solid;
+    /* border: red 2px solid; */
+    background-color: #eeeeee ;
+    display: flex;
+    justify-content: space-between;
 }
 
 /* ---   NAV ---*/
@@ -57,11 +65,35 @@ nav {
     width: 35%;
     height: 100%;
 
-    border: 2px green solid;
+    border-right: #aaa 1px solid;
+    /* border: 2px green solid; */
 
     float: left;
 }
 
+.user-box {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+.user-box img {
+    height: 37px;
+    border-radius: 50%;
+}
+.user-box div {
+    padding-left: 10px;
+}
+
+.button-box {
+    padding: 10px;
+    color: #aaa;
+
+    display: flex;
+    align-items: center;
+}
+.button-box .fas {
+    margin: 7px;
+}
 
 .list-box {
     background-color: #fff;
@@ -71,11 +103,17 @@ nav {
     height: 60px;
     padding:10px;
     display: flex;
-    align-items: center;
-    
+    align-items: center; 
 }
-
-
+.contact-box.active {
+    background-color: #ccc;
+}
+.contact-box:hover.active {
+    background-color: #ccc;
+}
+.contact-box:hover {
+    background-color: #eee;
+}
 .contact-box img {
     width: 42px;
     border-radius: 50%;
@@ -92,7 +130,7 @@ main {
     width: 65%;
     height: 100%;
 
-    border: blue 2px solid;
+    /* border: blue 2px solid; */
 
     float: left;
 /* --- / MAIN --- */

@@ -27,24 +27,57 @@
 
         <!-- finestra applicazione -->
         <div class="app-window clearfix">
+
+            <!--  layout destra -->
             <nav>
-                <header></header>
+                <!--  utente -->
+                <header>
+                    <div class="user-box">
+                        <img src="img/agostino.jpg" alt="user-avatar">
+                        <div>Agostino</div>
+                    </div>
+                    <div class="button-box">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </header>
+                <!-- / utente -->
+
                 <div class="contact-container">
                     <div class="notification"></div>
                     <div class="search-box"></div>
                     <div class="list-box">
                         <!-- v-for per creare la lista dei contatti in data -->
-                        <div v-for='(contact, index) in contacts' class="contact-box">
-                            <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+                        <div 
+                        v-for='(contact, index) in contacts' 
+                        class="contact-box" @click='activeUser(index)'
+                        :class='{active : index === activeUserId}'
+                        >
+                            <img  :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
                             <div> {{contact.name}} </div>
                         </div>
                     </div>
                 </div>
             </nav>
+            <!-- / layout destra -->
 
+            <!--   layout sinistra -->
             <main>
-                <header></header>
+                <header>
+                    <div class="user-box">
+                        <img :src="'img/avatar' + contacts[activeUserId].avatar + '.jpg'" alt="contacts[activeUserId].name">
+                        <div> {{ contacts[activeUserId].name }}</div>
+                    </div>
+                    <div class="button-box">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </header>
             </main>
+            <!-- / layout sinistra -->
+
 
         </div>
         <!-- / finestra applicazione -->       
