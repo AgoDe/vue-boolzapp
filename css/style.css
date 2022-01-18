@@ -1,0 +1,66 @@
+/*   CLASSI UTILITY */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearfix {
+    clear: both;
+    content: '';
+    display: table;
+}
+/* / CLASSI UTILITY */
+
+/*   background layout */
+
+#app {
+    position: relative;
+}
+
+.up-layout {
+    height: 120px;
+    background-color: #128C7E;
+}
+.down-layout {
+    background-color: #ece5dd;
+    height: calc(100vh - 120px);
+}
+/* / background layout */
+
+.app-window {
+    height: 600px;
+    width: 900px;
+
+    border: black 2px solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ---   NAV ---*/
+nav {
+    width: 35%;
+    height: 100%;
+
+    border: 2px green solid;
+
+    float: left;
+}
+
+header {
+    height: 55px;
+    border: red 2px solid;
+}
+/* --- / NAV --- */
+
+/* ---   MAIN --- */
+main {
+    width: 65%;
+    height: 100%;
+
+    border: blue 2px solid;
+
+    float: left;
+/* --- / MAIN --- */
