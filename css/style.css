@@ -3,12 +3,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    font-family: 'Corinthia', cursive;
+    font-family: 'Dongle', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .clearfix {
     clear: both;
     content: '';
     display: table;
+}
+
+/* puntatore */
+.contact-box {
+    cursor: pointer;
 }
 /* / CLASSI UTILITY */
 
@@ -38,6 +47,10 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+header {
+    height: 55px;
+    border: red 2px solid;
+}
 
 /* ---   NAV ---*/
 nav {
@@ -49,10 +62,29 @@ nav {
     float: left;
 }
 
-header {
-    height: 55px;
-    border: red 2px solid;
+
+.list-box {
+    background-color: #fff;
+    
 }
+.contact-box {
+    height: 60px;
+    padding:10px;
+    display: flex;
+    align-items: center;
+    
+}
+
+
+.contact-box img {
+    width: 42px;
+    border-radius: 50%;
+}
+
+.contact-box div {
+    padding-left: 10px;
+}
+
 /* --- / NAV --- */
 
 /* ---   MAIN --- */

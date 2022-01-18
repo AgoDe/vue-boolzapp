@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Corinthia&family=Dongle&family=Roboto&display=swap" rel="stylesheet">
     <link rel="icon" href="img/whatsapp_icon_130788.ico">
     <title>Boolzap</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -27,7 +30,15 @@
             <nav>
                 <header></header>
                 <div class="contact-container">
-
+                    <div class="notification"></div>
+                    <div class="search-box"></div>
+                    <div class="list-box">
+                        <!-- v-for per creare la lista dei contatti in data -->
+                        <div v-for='(contact, index) in contacts' class="contact-box">
+                            <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+                            <div> {{contact.name}} </div>
+                        </div>
+                    </div>
                 </div>
             </nav>
 
