@@ -88,21 +88,21 @@ new Vue({
             },   
         ],
         activeUserId: 0,
-        newMessage: ''
-        
+        messageInput: '',
+        searchContactsInput: '',
     },
     methods: {
         activeUser: function(index) {
             this.activeUserId= index
         },
         messagePush: function(index) {
-            const messageToPush = this.newMessage
+            const messageToPush = this.messageInput
             this.contacts[index].messages.push({
                 date: '19/01/2022 10:00:00',
                 text: messageToPush,
                 status: 'sent'
             })
-            this.newMessage = ''
+            this.messageInput = ''
             setTimeout( () => {
                 this.contacts[index].messages.push({
                     date: '19/01/2022 10:00:01',
@@ -111,7 +111,23 @@ new Vue({
             })
             }, 1000)
         
+        },
+        
+    },
+    mounted: {
+        contactsFilter: function() {
+            const activeName = this.contacts.filter((element) => {
+                let nameActive = element.name
+                nameActive = nameActive.toLowerCase()
+                console.log(nameActive)
+                
+                if(nameActive === this.searchContactsInput) {
+                    return true
+                }
+                return false
+            })
+            console.log(activeName)
         }
 
-    }, 
+    }
 })

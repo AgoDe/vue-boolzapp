@@ -23,7 +23,7 @@
         <!-- finestra applicazione -->
         <div class="app-window clearfix">
 
-            <!--  layout sinistra -->
+            <!--  layout contatti (sinistra) -->
             <nav>
                 <!--  utente -->
                 <header>
@@ -32,7 +32,7 @@
                         <div>Agostino</div>
                     </div>
                     <div class="button-box">
-                        <i class="icon fas fa-circle-notch"></i>
+                        <i @click="contactsFilter()" class="icon fas fa-circle-notch"></i>
                         <i class="icon fas fa-comment-alt"></i>
                         <i class="icon fas fa-ellipsis-v"></i>
                     </div>
@@ -46,14 +46,20 @@
                             <label for="search">
                                 <i class="icon fas fa-search"></i>
                             </label>
-                            <input name="search" placeholder='Cerca o inizia una nuova chat' type="text">
+                            <input
+                            v-model="searchContactsInput"
+                            name="search" 
+                            placeholder='Cerca o inizia una nuova chat' 
+                            type="text"
+                            >
                         </div>
                     </div>
                     <div class="list-box">
                         <!-- v-for per creare la lista dei contatti in data -->
                         <div 
                         v-for='(contact, index) in contacts' 
-                        class="contact-box" @click='activeUser(index)'
+                        class="contact-box" 
+                        @click='activeUser(index)'
                         :class='{active : index === activeUserId}'
                         >
                             <img  :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
@@ -62,9 +68,9 @@
                     </div>
                 </div>
             </nav>
-            <!-- / layout sinistra -->
+            <!-- / layout contatti (sinistra) -->
 
-            <!--   layout destra -->
+            <!--   layout chat (destra) -->
             <main>
 
                 <!--   utente attivo -->
@@ -99,14 +105,14 @@
                     </div>
                     <div class="write-box">
                         <i class="icon far fa-grin"></i>
-                        <input v-model="newMessage" @keyup.enter="messagePush(activeUserId)" placeholder="scrivi un messaggio" type="text">
+                        <input v-model="messageInput" @keyup.enter="messagePush(activeUserId)" placeholder="scrivi un messaggio" type="text">
                         <i class="icon fas fa-microphone"></i>
                     </div>
                 </div>
                 <!-- / chat -->
 
             </main>
-            <!-- / layout destra -->
+            <!-- / layout chat (destra) -->
 
 
         </div>
