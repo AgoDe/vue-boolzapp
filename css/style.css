@@ -32,27 +32,17 @@
 /*   background layout */
 
 #app {
-    position: relative;
+    padding-top: 10vh;
+    height: 100vh;
+    background: linear-gradient(to bottom, #128C7E 20%, #f0eae3 20% );
 }
 
-.up-layout {
-    height: 17vh;
-    background-color: #128C7E;
-}
-.down-layout {
-    background-color: #f0eae3;
-    height: 83vh;
-}
 /* / background layout */
 
 .app-window {
     height: 600px;
     width: 900px;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 0 auto;
 }
 header {
     height: 55px;
@@ -98,16 +88,25 @@ nav {
     height: calc(100% - 55px);
 }
 .search-box {
+    height: 40px;
+    padding: 4px;
+    
+}
+.search-box div {
     position: relative;
-    height: 35px;
+    height: 100%;
     padding: 0 10px;
-    margin: 5px;
     border: 0.5px #ccc solid;
     border-radius: 6px;
+    line-height: 100%;
 }
 .search-box input {
     border: none;
     width: 85%;
+}
+
+:focus-visible {
+    outline: none;
 }
 
 .list-box {
@@ -199,8 +198,6 @@ main {
     border: none;
     height: 33px;
 }
--webkit-input-placeholder {
-    
-}
+
 
 /* --- / MAIN --- */

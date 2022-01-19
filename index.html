@@ -20,13 +20,6 @@
 <body>
     <div id='app'>
 
-        <!-- sfondo colorato -->
-        <div class="background-layout">
-            <div class="up-layout"></div>
-            <div class='down-layout'></div>
-        </div>
-        <!-- / sfondo colorato -->
-
         <!-- finestra applicazione -->
         <div class="app-window clearfix">
 
@@ -49,10 +42,12 @@
                 <div class="contacts-container">
                     <div class="notification"></div>
                     <div class="search-box">
-                        <label for="search">
-                            <i class="icon fas fa-search"></i>
-                        </label>
-                        <input name="search" placeholder='Cerca o inizia una nuova chat' type="text">
+                        <div>
+                            <label for="search">
+                                <i class="icon fas fa-search"></i>
+                            </label>
+                            <input name="search" placeholder='Cerca o inizia una nuova chat' type="text">
+                        </div>
                     </div>
                     <div class="list-box">
                         <!-- v-for per creare la lista dei contatti in data -->
@@ -104,8 +99,7 @@
                     </div>
                     <div class="write-box">
                         <i class="icon far fa-grin"></i>
-
-                        <input v-model="newMessage" placeholder="scrivi un messaggio" type="text">
+                        <input v-model="newMessage" @keyup.enter="messagePush(activeUserId)" placeholder="scrivi un messaggio" type="text">
                         <i class="icon fas fa-microphone"></i>
                     </div>
                 </div>

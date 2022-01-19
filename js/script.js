@@ -85,8 +85,7 @@ new Vue({
                         status: 'received'
                     }
                 ],
-            },
-            
+            },   
         ],
         activeUserId: 0,
         newMessage: ''
@@ -96,7 +95,23 @@ new Vue({
         activeUser: function(index) {
             this.activeUserId= index
         },
-
+        messagePush: function(index) {
+            const messageToPush = this.newMessage
+            this.contacts[index].messages.push({
+                date: '19/01/2022 10:00:00',
+                text: messageToPush,
+                status: 'sent'
+            })
+            this.newMessage = ''
+            setTimeout( () => {
+                this.contacts[index].messages.push({
+                    date: '19/01/2022 10:00:01',
+                    text: 'we ciao!' ,
+                    status: 'received'
+            })
+            }, 1000)
+        
+        }
 
     }, 
 })
