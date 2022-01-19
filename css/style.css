@@ -17,11 +17,11 @@
 
 /* puntatore */
 .contact-box,
-.fas {
+i {
     cursor: pointer;
 }
 
-.fas:hover {
+i:hover {
     color: #666;
 }
 /* / CLASSI UTILITY */
@@ -66,7 +66,7 @@ nav {
     height: 100%;
 
     border-right: #aaa 1px solid;
-    /* border: 2px green solid; */
+    background: #fff;
 
     float: left;
 }
@@ -96,7 +96,6 @@ nav {
 }
 
 .list-box {
-    background-color: #fff;
     
 }
 .contact-box {
@@ -130,28 +129,64 @@ main {
     width: 65%;
     height: 100%;
 
-    /* border: blue 2px solid; */
-
     float: left;
 }
- 
+
+
+.chat-container {
+    height: calc(100% - 55px) ;
+    background-image: url(../img/mine.jpg);
+}
+.chat-box {
+    height: calc(100% - 45px);
+    
+}
 .message-box {
     display: flex;
 }
-
 .message-box .message {
-    padding: 5px;
-    margin: 7px;
+    padding: 10px 15px;
+    margin: 10px 20px;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 8px;
     width: 150px;
     font-size: 13px;
+    position: relative;
 }
 .message-box.sent {
     justify-content: flex-end;
 }
 .message-box.sent .message {
-    background-color: #25D366;
+    background-color: #dcf8c6;
+}
+.message .date {
+    position: absolute;
+    bottom: 1px;
+    right: 2px;
+    font-size: 8px;
+    color: #aaa;
+}
+
+.write-box {
+    height: 45px;
+    background-color:rgb(241, 237, 233);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.write-box i {
+    padding: 0px 15px;
+    color: #aaa;
+}
+.write-box input {
+    width: 480px;
+    border-radius: 3px;
+    padding-left: 10px;
+    border: none;
+    height: 33px;
+}
+-webkit-input-placeholder {
+    
 }
 
 /* --- / MAIN --- */
