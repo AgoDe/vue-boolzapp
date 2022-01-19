@@ -70,7 +70,7 @@ new Vue({
                 ],
             },
             {
-                name: 'Luisa',
+                name: 'Gianfranco',
                 avatar: '_4',
                 visible: true,
                 messages: [
@@ -89,6 +89,7 @@ new Vue({
             
         ],
         activeUserId: 0,
+        newMessage: ''
         
     },
     methods: {
