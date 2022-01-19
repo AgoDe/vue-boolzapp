@@ -109,12 +109,8 @@ new Vue({
                     text: 'we ciao!' ,
                     status: 'received'
             })
-            }, 1000)
-        
+            }, 1000)   
         },
-        
-    },
-    mounted: {
         contactsFilter: function() {
             const activeName = this.contacts.filter((element) => {
                 let nameActive = element.name
@@ -128,6 +124,7 @@ new Vue({
             })
             console.log(activeName)
         }
-
-    }
+        
+    },
+  
 })
