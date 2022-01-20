@@ -86,12 +86,100 @@ new Vue({
                     }
                 ],
             },   
+            {
+                name: 'Fabrizio',
+                avatar: '_5',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        text: 'Lo sai che ha aperto una nuova pizzeria?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        text: 'Si, ma preferirei andare al cinema',
+                        status: 'received'
+                    }
+                ],
+            },   
+            {
+                name: 'Sabrina',
+                avatar: '_6',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        text: 'Lo sai che ha aperto una nuova pizzeria?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        text: 'Si, ma preferirei andare al cinema',
+                        status: 'received'
+                    }
+                ],
+            },   
+            {
+                name: 'Michelangelo',
+                avatar: '_7',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        text: 'Lo sai che ha aperto una nuova pizzeria?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        text: 'Si, ma preferirei andare al cinema',
+                        status: 'received'
+                    }
+                ],
+            },   
+            {
+                name: 'Michele',
+                avatar: '_8',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        text: 'Hai portato a spasso il cane?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        text: 'Ricordati di dargli da mangiare',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 16:15:22',
+                        text: 'Tutto fatto!',
+                        status: 'received'
+                    }
+                ],
+            },
+           
         ],
         activeUserId: 0,
         messageInput: '',
         searchContactsInput: '',
+        filteredContacts: [],
+        receivedMessages: [
+            'ciao!',
+            'ciao, come stai?',
+            'carissimo!',
+            'we grande',
+            'ohi, com\'è?'
+        ],
+
     },
     methods: {
+        randomMessages: function() {
+            let randomNumber = Math.floor(Math.random() * ((this.receivedMessages.length + 1) - 1)) + 1
+            console.log(randomNumber)
+            return  this.receivedMessages[randomNumber]
+        },
         activeUser: function(index) {
             this.activeUserId= index
         },
@@ -106,24 +194,31 @@ new Vue({
             setTimeout( () => {
                 this.contacts[index].messages.push({
                     date: '19/01/2022 10:00:01',
-                    text: 'we ciao!' ,
+                    text: 'we ciao!',
                     status: 'received'
             })
             }, 1000)   
         },
-        contactsFilter: function() {
-            const activeName = this.contacts.filter((element) => {
+        contactsFilter: function(element) {
+
+            this.filteredContacts = [];
+            this.filteredContacts = this.contacts.filter((element) => {
                 let nameActive = element.name
                 nameActive = nameActive.toLowerCase()
-                console.log(nameActive)
-                
-                if(nameActive === this.searchContactsInput) {
+                if(nameActive.startsWith(this.searchContactsInput) ) {
                     return true
                 }
                 return false
             })
-            console.log(activeName)
-        }
+            console.log(this.filteredContacts)
+        },
+       
+
+/* .startwith()
+    evento onchange da usare 
+    v:on
+    da custom events*/
+    
         
     },
   

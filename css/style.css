@@ -32,7 +32,7 @@
 /*   background layout */
 
 #app {
-    padding-top: 10vh;
+    padding-top: 7vh;
     height: 100vh;
     background: linear-gradient(to bottom, #128C7E 20%, #f0eae3 20% );
 }
@@ -110,7 +110,7 @@ nav {
 }
 
 .list-box {
-    height: calc(100% - 40px);
+    max-height: calc(100% - 40px);
     overflow-y: scroll;
 }
 .contact-box {
@@ -167,6 +167,7 @@ main {
     border-radius: 8px;
     width: 150px;
     font-size: 13px;
+    box-shadow: 2px 2px 2px #aaa;
     position: relative;
 }
 .message-box.sent {
@@ -178,7 +179,7 @@ main {
 .message .date {
     position: absolute;
     bottom: 1px;
-    right: 2px;
+    right: 4px;
     font-size: 8px;
     color: #aaa;
 }

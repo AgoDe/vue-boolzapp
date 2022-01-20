@@ -32,7 +32,7 @@
                         <div>Agostino</div>
                     </div>
                     <div class="button-box">
-                        <i @click="contactsFilter()" class="icon fas fa-circle-notch"></i>
+                        <i class="icon fas fa-circle-notch"></i>
                         <i class="icon fas fa-comment-alt"></i>
                         <i class="icon fas fa-ellipsis-v"></i>
                     </div>
@@ -47,6 +47,7 @@
                                 <i class="icon fas fa-search"></i>
                             </label>
                             <input
+                            @change="contactsFilter()" 
                             v-model="searchContactsInput"
                             name="search" 
                             placeholder='Cerca o inizia una nuova chat' 
@@ -57,7 +58,7 @@
                     <div class="list-box">
                         <!-- v-for per creare la lista dei contatti in data -->
                         <div 
-                        v-for='(contact, index) in contacts' 
+                        v-for='(contact, index) in filteredContacts' 
                         class="contact-box" 
                         @click='activeUser(index)'
                         :class='{active : index === activeUserId}'
@@ -105,7 +106,11 @@
                     </div>
                     <div class="write-box">
                         <i class="icon far fa-grin"></i>
-                        <input v-model="messageInput" @keyup.enter="messagePush(activeUserId)" placeholder="scrivi un messaggio" type="text">
+                        <input
+                        v-model="messageInput" 
+                        @keyup.enter="messagePush(activeUserId)" 
+                        placeholder="scrivi un messaggio" 
+                        type="text">
                         <i class="icon fas fa-microphone"></i>
                     </div>
                 </div>
