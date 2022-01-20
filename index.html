@@ -66,6 +66,11 @@
                             >
                                 <img  :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
                                 <div> {{contact.name}} </div>
+                                <div class="last">
+                                    <div> {{ lastMessageDate(contact) }} </div>
+                                    <hr>
+                                    <div> {{ lastMessage(contact) }} </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -97,12 +102,16 @@
                         <div 
                         class="message-box"
                         :class="{sent : message.status === 'sent'}"
-                        v-for='message in this.contacts[activeUserId].messages'
+                        v-for='(message, index) in this.contacts[activeUserId].messages'
                         >
                             <div class="message" >
                                 <div class="text"> {{message.text}} </div>
                                 <div class="date"> {{message.date}}</div>
-                                
+                                <i class="fas fa-chevron-down" @click="activeModal(message)"></i>
+                                <div v-if="message.modal" class="modal">
+                                    <div>Message Info</div>
+                                    <div @click="deleteMessage(contacts[activeUserId].messages, index)">Delete Message</div>
+                                </div>
                             </div>
                         </div>
                     </div>

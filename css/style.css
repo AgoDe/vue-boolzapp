@@ -118,6 +118,7 @@ nav {
     padding:10px;
     display: flex;
     align-items: center; 
+    position: relative;
 }
 .contact-box.active {
     background-color: #ccc;
@@ -136,6 +137,19 @@ nav {
 .contact-box div {
     padding-left: 10px;
 }
+.contact-box .last {
+    position: absolute;
+    right: 15px;
+    bottom: 5px ;
+    color: #666;
+    font-size: 8px;
+    max-width: 100px;
+}
+.contact-box .last div {
+    padding: 3px;
+}
+
+
 
 /* --- / NAV --- */
 
@@ -161,11 +175,11 @@ main {
     display: flex;
 }
 .message-box .message {
-    padding: 10px 15px;
+    padding: 10px 30px 20px;
     margin: 10px 20px;
     background-color: #fff;
     border-radius: 8px;
-    width: 150px;
+    max-width: 250px;
     font-size: 13px;
     box-shadow: 2px 2px 2px #aaa;
     position: relative;
@@ -179,9 +193,35 @@ main {
 .message .date {
     position: absolute;
     bottom: 1px;
-    right: 4px;
+    right: 8px;
     font-size: 8px;
     color: #aaa;
+}
+.message i {
+    display: none;
+    position: absolute;
+    color: #aaa;
+    right: 10px;
+    top: 10px;
+}
+.message:hover i {
+    display: block ;
+}
+.message .modal {
+    position: absolute;
+    z-index: 1001;
+    top: 20px;
+    right: 10px;
+    background: #fff;
+    box-shadow: 1px 1px 1px 1px #aaa;
+}
+
+.modal div {
+    padding: 10px;
+    width: 120px;
+}
+.modal div:hover {
+    background: #eee;
 }
 
 .write-box {
