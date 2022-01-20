@@ -176,7 +176,7 @@ new Vue({
     },
     methods: {
         randomMessages: function() {
-            let randomNumber = Math.floor(Math.random() * ((this.receivedMessages.length + 1) - 1)) + 1
+            let randomNumber = Math.floor(Math.random() * ((this.receivedMessages.length) - 1)) + 1
             console.log(randomNumber)
             return  this.receivedMessages[randomNumber]
         },
@@ -186,18 +186,18 @@ new Vue({
         messagePush: function(index) {
             const messageToPush = this.messageInput
             this.contacts[index].messages.push({
-                date: '19/01/2022 10:00:00',
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                 text: messageToPush,
                 status: 'sent'
             })
             this.messageInput = ''
             setTimeout( () => {
                 this.contacts[index].messages.push({
-                    date: '19/01/2022 10:00:01',
-                    text: 'we ciao!',
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                    text: this.randomMessages(),
                     status: 'received'
             })
-            }, 1000)   
+            }, 1500)   
         },
         contactsFilter: function(element) {
 
