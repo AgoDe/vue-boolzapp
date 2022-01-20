@@ -48,7 +48,7 @@
                                 <i class="icon fas fa-search"></i>
                             </label>
                             <input
-                            @change="contactsFilter()" 
+                            
                             v-model="searchContactsInput"
                             name="search" 
                             placeholder='Cerca o inizia una nuova chat' 
@@ -58,14 +58,15 @@
                     </div>
                     <div class="list-box">
                         <!-- v-for per creare la lista dei contatti in data -->
-                        <div 
-                        v-for='(contact, index) in filteredContacts' 
-                        class="contact-box" 
-                        @click='activeUser(index)'
-                        :class='{active : index === activeUserId}'
-                        >
-                            <img  :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
-                            <div> {{contact.name}} </div>
+                        <div v-for='(contact, index) in contacts'>
+                            <div 
+                            @click='activeUser(index)'
+                            :class='{active : index === activeUserId}'
+                            class="contact-box" v-if="contact.name.toLowerCase().includes(searchContactsInput)"
+                            >
+                                <img  :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+                                <div> {{contact.name}} </div>
+                            </div>
                         </div>
                     </div>
                 </div>

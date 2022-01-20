@@ -164,13 +164,13 @@ new Vue({
         activeUserId: 0,
         messageInput: '',
         searchContactsInput: '',
-        filteredContacts: [],
         receivedMessages: [
             'ciao!',
             'ciao, come stai?',
             'carissimo!',
             'we grande',
-            'ohi, com\'è?'
+            'ohi, com\'è?',
+            'scusa ma ora non ho voglia di parlare con te',
         ],
 
     },
@@ -198,28 +198,7 @@ new Vue({
                     status: 'received'
             })
             }, 1500)   
-        },
-        contactsFilter: function(element) {
-
-            this.filteredContacts = [];
-            this.filteredContacts = this.contacts.filter((element) => {
-                let nameActive = element.name
-                nameActive = nameActive.toLowerCase()
-                if(nameActive.startsWith(this.searchContactsInput) ) {
-                    return true
-                }
-                return false
-            })
-            console.log(this.filteredContacts)
-        },
-       
-
-/* .startwith()
-    evento onchange da usare 
-    v:on
-    da custom events*/
-    
-        
+        }, 
     },
   
 })
