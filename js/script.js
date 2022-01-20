@@ -99,6 +99,200 @@ new Vue({
                     }
                 ],
             },   
+            {
+                name: 'Fabrizio',
+                avatar: '_5',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        text: 'Hai portato a spasso il cane?',
+                        status: 'sent',
+                        modal: false,
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        text: 'Ricordati di dargli da mangiare',
+                        status: 'sent',
+                        modal: false,
+
+                    },
+                    {
+                        date: '10/01/2020 16:15:22',
+                        text: 'Tutto fatto!',
+                        status: 'received',
+                        modal: false,
+                    }
+                ],
+            },
+            {
+                name: 'Sabrina',
+                avatar: '_6',
+                visible: true,
+                messages: [
+                    {
+                        date: '20/03/2020 16:30:00',
+                        text: 'Ciao come stai?',
+                        status: 'sent',
+                        modal: false,
+                    },
+                    {
+                        date: '20/03/2020 16:30:55',
+                        text: 'Bene grazie! Stasera ci vediamo?',
+                        status: 'received',
+                        modal: false,
+                    },
+                    {
+                        date: '20/03/2020 16:35:00',
+                        text: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                        status: 'sent',
+                        modal: false,
+                    }
+                ],
+            },
+        
+            {
+                name: 'Massimo',
+                avatar: '_7',
+                visible: true,
+                messages: [
+                    {
+                        date: '28/03/2020 10:10:40',
+                        text: 'La Marianna va in campagna',
+                        status: 'received',
+                        modal: false,
+                    },
+                    {
+                        date: '28/03/2020 10:20:10',
+                        text: 'Sicuro di non aver sbagliato chat?',
+                        status: 'sent',
+                        modal: false,
+                    },
+                    {
+                        date: '28/03/2020 16:15:22',
+                        text: 'Ah scusa!',
+                        status: 'received',
+                        modal: false,
+                    }
+                ],
+            },
+            {
+                name: 'Franco',
+                avatar: '_8',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        text: 'Lo sai che ha aperto una nuova pizzeria?',
+                        status: 'sent',
+                        modal: false,
+
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        text: 'Si, ma preferirei andare al cinema',
+                        status: 'received',
+                        modal: false,
+                    }
+                ],
+            },   
+            {
+                name: 'Ottavio',
+                avatar: '_5',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        text: 'Hai portato a spasso il cane?',
+                        status: 'sent',
+                        modal: false,
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        text: 'Ricordati di dargli da mangiare',
+                        status: 'sent',
+                        modal: false,
+
+                    },
+                    {
+                        date: '10/01/2020 16:15:22',
+                        text: 'Tutto fatto!',
+                        status: 'received',
+                        modal: false,
+                    }
+                ],
+            },
+            {
+                name: 'Fabiana',
+                avatar: '_6',
+                visible: true,
+                messages: [
+                    {
+                        date: '20/03/2020 16:30:00',
+                        text: 'Ciao come stai?',
+                        status: 'sent',
+                        modal: false,
+                    },
+                    {
+                        date: '20/03/2020 16:30:55',
+                        text: 'Bene grazie! Stasera ci vediamo?',
+                        status: 'received',
+                        modal: false,
+                    },
+                    {
+                        date: '20/03/2020 16:35:00',
+                        text: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                        status: 'sent',
+                        modal: false,
+                    }
+                ],
+            },
+        
+            {
+                name: 'Lorenzo',
+                avatar: '_7',
+                visible: true,
+                messages: [
+                    {
+                        date: '28/03/2020 10:10:40',
+                        text: 'La Marianna va in campagna',
+                        status: 'received',
+                        modal: false,
+                    },
+                    {
+                        date: '28/03/2020 10:20:10',
+                        text: 'Sicuro di non aver sbagliato chat?',
+                        status: 'sent',
+                        modal: false,
+                    },
+                    {
+                        date: '28/03/2020 16:15:22',
+                        text: 'Ah scusa!',
+                        status: 'received',
+                        modal: false,
+                    }
+                ],
+            },
+            {
+                name: 'Giovanni',
+                avatar: '_8',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        text: 'Lo sai che ha aperto una nuova pizzeria?',
+                        status: 'sent',
+                        modal: false,
+
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        text: 'Si, ma preferirei andare al cinema',
+                        status: 'received',
+                        modal: false,
+                    }
+                ],
+            },   
             
         ],
         activeUserId: 0,
@@ -112,8 +306,6 @@ new Vue({
             'ohi, com\'è?',
             'scusa ma ora non ho voglia di parlare con te',
         ],
-
-
     },
     methods: {
         randomMessages: function() {
@@ -140,7 +332,7 @@ new Vue({
                     status: 'received',
                     modal: false,
             })
-            }, 1500)   
+            }, 1000)   
         }, 
         activeModal: function (message) {
             message.modal = !message.modal

@@ -40,15 +40,15 @@
                 </header>
                 <!-- / utente -->
 
+                <!-- contatti -->
                 <div class="contacts-container">
-                    <div class="notification"></div>
+
                     <div class="search-box">
                         <div>
                             <label for="search">
                                 <i class="icon fas fa-search"></i>
                             </label>
                             <input
-                            
                             v-model="searchContactsInput"
                             name="search" 
                             placeholder='Cerca o inizia una nuova chat' 
@@ -60,9 +60,10 @@
                         <!-- v-for per creare la lista dei contatti in data -->
                         <div v-for='(contact, index) in contacts'>
                             <div 
+                            class="contact-box" 
                             @click='activeUser(index)'
                             :class='{active : index === activeUserId}'
-                            class="contact-box" v-if="contact.name.toLowerCase().includes(searchContactsInput)"
+                            v-if="contact.name.toLowerCase().includes(searchContactsInput)"
                             >
                                 <img  :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
                                 <div> {{contact.name}} </div>
@@ -75,17 +76,19 @@
                         </div>
                     </div>
                 </div>
+                <!-- / contatti -->
+
             </nav>
             <!-- / layout contatti (sinistra) -->
 
             <!--   layout chat (destra) -->
             <main>
 
-                <!--   utente attivo -->
+                <!--   intestazione chat utente attivo -->
                 <header>
                     <div class="user-box">
                         <img :src="'img/avatar' + contacts[activeUserId].avatar + '.jpg'" alt="contacts[activeUserId].name">
-                        <div> {{ contacts[activeUserId].name }}</div>
+                        <div> {{ contacts[activeUserId].name }} </div>
                     </div>
                     <div class="button-box">
                         <i class="icon fas fa-search"></i>
@@ -93,11 +96,12 @@
                         <i class="icon fas fa-ellipsis-v"></i>
                     </div>
                 </header>
-                <!-- / utente attivo -->
+                <!-- / intestazione chat utente attivo -->
 
                 <!--   chat -->
                 <div class="chat-container">
 
+                    <!-- contenitore messaggi -->
                     <div class="chat-box">
                         <div 
                         class="message-box"
@@ -107,14 +111,19 @@
                             <div class="message" >
                                 <div class="text"> {{message.text}} </div>
                                 <div class="date"> {{message.date}}</div>
-                                <i class="fas fa-chevron-down" @click="activeModal(message)"></i>
+                                <i class="icon fas fa-chevron-down" @click="activeModal(message)"></i>
+                                <!-- menù che si apre al click sullo chevron -->
                                 <div v-if="message.modal" class="modal">
                                     <div>Message Info</div>
                                     <div @click="deleteMessage(contacts[activeUserId].messages, index)">Delete Message</div>
                                 </div>
+                                <!-- / menù che si apre al click sullo chevron -->
                             </div>
                         </div>
                     </div>
+                    <!-- / contenitore messaggi -->
+
+                    <!-- input messaggi -->
                     <div class="write-box">
                         <i class="icon far fa-grin"></i>
                         <input
@@ -124,12 +133,13 @@
                         type="text">
                         <i class="icon fas fa-microphone"></i>
                     </div>
+                    <!-- / input messaggi -->
+
                 </div>
                 <!-- / chat -->
 
             </main>
             <!-- / layout chat (destra) -->
-
 
         </div>
         <!-- / finestra applicazione -->       
